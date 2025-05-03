@@ -1,4 +1,4 @@
-matplotlib
-textwrap
-pandas
-sklearn
+numpy==2.2.2
+matplotlib==3.10.1
+pandas==2.2.3
+scikit-learn==1.6.1
