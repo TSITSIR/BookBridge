@@ -233,7 +233,7 @@ books.loc[books["Title"] == "Franny K. Stein: Mad Scientist (Series) - Jim Bento
 
 
 # UI Start
-st.title("Book Recommendation Quiz")
+st.title("BookBridge Recommendation Quiz")
 
 # Grade assigning by numeric value
 grade_mapping_lexile = {
