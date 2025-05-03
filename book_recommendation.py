@@ -401,13 +401,13 @@ if not filtered_books.empty:
         for i, genre in enumerate(filtered_books["Genre"]):
             book_genres = [g.strip().lower() for g in genre.split("-")]
             if selected_genre_lower not in book_genres:
-                genre_penalty[i] = 12  # Fixed penalty for genre mismatch
+                genre_penalty[i] = 11  # Fixed penalty for genre mismatch
 
     # Total distance includes genre penalty
     total_distance = base_distance + genre_penalty
 
     # Convert to similarity percentage
-    max_distance = np.sqrt(461.7) + 12  # Adjusted max with possible genre penalty
+    max_distance = np.sqrt(461.7) + 11  # Adjusted max with possible genre penalty
     similarity_percentage = (1 - (total_distance / max_distance)) * 100
 
     # Assign and sort
