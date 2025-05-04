@@ -6,6 +6,13 @@ import textwrap
 import pandas as pd
 from sklearn.preprocessing import MultiLabelBinarizer
 
+# Configurations
+st.set_page_config(page_title="BookBridge",
+                   page_icon="📚",
+                   layout="wide",
+                   menu_items={"About": "This quiz was made to help you select some books you could have an interest in! Hope you found/can find something you would like!"} 
+                   )
+
 # Hide the Streamlit hamburger menu, footer, and header
 st.markdown("""
     <style>
@@ -17,12 +24,6 @@ st.markdown("""
     header {visibility: hidden;}
     </style>
 """, unsafe_allow_html=True)
-# Configurations
-st.set_page_config(page_title="BookBridge",
-                   page_icon="📚",
-                   layout="wide",
-                   menu_items={"About": "This quiz was made to help you select some books you could have an interest in! Hope you found/can find something you would like!"} 
-                   )
 
 # Books dataframe
 books = pd.DataFrame({
