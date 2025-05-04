@@ -259,7 +259,7 @@ grade_mapping_lexile = {
 }
                      
 reading_level = st.radio("What is your reading level?", list(grade_mapping_lexile.keys()),
-                         help=("This program was designed for 1st to 8th graders; if your reading level falls outside of this range, you may have to rely on another resource to find a book you may love.")
+                         help=("This program was designed for 1st to 8th graders; if your reading level falls outside of this range, you may have to rely on another resource to find a book you may love."))
 reading_level_numeric = grade_mapping_lexile[reading_level]
 
 # Define the range of acceptable reading levels (within a set amount, weighted towards challenging kids)
