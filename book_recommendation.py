@@ -13,17 +13,19 @@ st.set_page_config(page_title="BookBridge",
                    menu_items={"About": "This quiz was made to help you select some books you could have an interest in! Hope you found/can find something you would like!"} 
                    )
 
-# Hide the Streamlit hamburger menu, footer, and header
-st.markdown("""
-    <style>
-    /* Hide top right menu */
-    #MainMenu {visibility: hidden;}
-    /* Hide footer */
-    footer {visibility: hidden;}
-    /* Hide Streamlit header */
-    header {visibility: hidden;}
-    </style>
-""", unsafe_allow_html=True)
+# Read query parameter
+query_params = st.experimental_get_query_params()
+mode = query_params.get("mode", ["kid"])[0]  # default to "kid"
+
+# If not in adult mode, hide Streamlit UI elements
+if mode != "adult":
+    st.markdown("""
+        <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        header {visibility: hidden;}
+        </style>
+    """, unsafe_allow_html=True)
 
 # Books dataframe
 books = pd.DataFrame({
