@@ -16,10 +16,10 @@ BookBridge recommends the top 5 books from a curated list of ~100 titles using a
   - Lighthearted vs. Serious tone
   - Picture-rich vs. Text-heavy
   - Fantasy vs. Realistic settings
-- **Genre Selector**: Pick from popular genres like adventure, mystery, historical fiction, etc.
+- **Genre Selector**: Pick from popular genres like adventure, mystery, historical fiction, etc. Genre is NOT the primary factor in recommendations, but rather contributes to similarity in the same way any other variable does.
 
 The system uses weighted similarity matching to score and return the most relevant books. Each recommendation includes:
-- Book title and summary with data
+- Book title and summary
 - A similarity graph showing how well the book matches the reader’s input
 
 ---
@@ -28,7 +28,7 @@ The system uses weighted similarity matching to score and return the most releva
 
 Many kids abandon reading not because they dislike books—but because they don’t know where to look. BookBridge solves that with an inviting, intelligent system that recommends stories that truly fit the reader's style and interests.
 
-It is designed for:
+It is designed/can be used for:
 - **School Libraries**
 - **Public Libraries**
 - **After-school programs**
@@ -39,7 +39,7 @@ This tool supports literacy development by making book choice more accessible, m
 ---
 
 ## Try It Live
-
+Try the system yourself at ink?to=bookbridge.streamlit.app
 
 ---
 
