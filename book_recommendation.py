@@ -6,16 +6,17 @@ import textwrap
 import pandas as pd
 from sklearn.preprocessing import MultiLabelBinarizer
 
-# Hide Streamlit menu and footer
-hide_streamlit_style = """
+# Hide the Streamlit hamburger menu, footer, and header
+st.markdown("""
     <style>
+    /* Hide top right menu */
     #MainMenu {visibility: hidden;}
+    /* Hide footer */
     footer {visibility: hidden;}
+    /* Hide Streamlit header */
     header {visibility: hidden;}
     </style>
-"""
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-
+""", unsafe_allow_html=True)
 # Configurations
 st.set_page_config(page_title="BookBridge",
                    page_icon="📚",
