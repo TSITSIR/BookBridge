@@ -206,7 +206,7 @@ books = pd.DataFrame({
          "Realistic Fiction", "Realistic Fiction", "Adventure", "Fantasy", "Mystery",
          "Animal Fiction", "Adventure", "Realistic Fiction", "Mystery", "Adventure",
          "Non-Fiction", "Science Fiction", "Fantasy", "Mystery", "Realistic Fiction"
-    ]
+    ],
 })
 
 # Update genre entries for books that clearly span more than one genre
