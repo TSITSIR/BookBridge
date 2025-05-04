@@ -41,7 +41,7 @@ This tool supports literacy development by making book choice more accessible, m
 
 ## Try It Live
 
-Try the project yourself **[here](bookbridge.streamlit.app)**.
+Try the project yourself **[here](https://bookbridge.streamlit.app)**.
 
 ---
 
