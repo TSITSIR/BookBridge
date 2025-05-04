@@ -6,6 +6,16 @@ import textwrap
 import pandas as pd
 from sklearn.preprocessing import MultiLabelBinarizer
 
+# Hide Streamlit menu and footer
+hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    </style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 # Configurations
 st.set_page_config(page_title="BookBridge",
                    page_icon="📚",
@@ -248,7 +258,7 @@ grade_mapping_lexile = {
 }
                      
 reading_level = st.radio("What is your reading level?", list(grade_mapping_lexile.keys()),
-                         help="If your reading level does not fall into one of the options, please contact a librarian for support on recommendations.")
+                         help=("This program was designed for 1st to 8th graders)
 reading_level_numeric = grade_mapping_lexile[reading_level]
 
 # Define the range of acceptable reading levels (within a set amount, weighted towards challenging kids)
