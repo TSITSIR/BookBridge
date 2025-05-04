@@ -14,7 +14,7 @@ st.set_page_config(page_title="BookBridge",
                    )
 
 # Read query parameter
-params = st.query_params()
+params = st.query_params
 mode = params.get("mode", ["kid"])[0]  # default to "kid"
 
 # If not in adult mode, hide Streamlit UI elements
