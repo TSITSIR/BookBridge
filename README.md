@@ -1,7 +1,7 @@
 # BookBridge
 **BookBridge** is a Streamlit-powered book recommendation system built as a community project to help students in grades 1 through 8 discover books they’ll actually enjoy. It tackles a common problem: many kids stop reading because they don’t know what to read next—especially when books aren’t recommended to them in a personalized way.
 
-This project makes finding the “next great book” easy, fast, and fun.
+This project makes finding the “next great book” easy, fast, and fun. 
 
 ---
 
@@ -33,25 +33,29 @@ It is designed/can be used for:
 - **Public Libraries**
 - **After-school programs**
 - **Parents or educators looking for smarter recommendations**
+- **Any child, on their own, looking for the next great read**
 
 This tool supports literacy development by making book choice more accessible, more engaging, and more aligned with individual taste.
 
 ---
 
 ## Try It Live
-Try the system yourself at ink?to=bookbridge.streamlit.app
+
+Try the project yourself **[here](bookbridge.streamlit.app)**.
 
 ---
 
 ## Built With
 
-- Python
-- Streamlit
-- Pandas
-- Custom weighted similarity engine
+- Python, one of (if not the most) popular coding languages in the world
+- Streamlit, a framework for data apps to be built
+- Pandas, a Python package for data manipulation
+- Numpy, another package for array manipulation
+- Scikit-learn, a machine learning library with tools
+- Custom weighted similarity engine in Python
 
 ---
 
 ## About the Author
 
-This project was created by a middle school student as a community impact initiative, with the goal of making personalized reading accessible to all children.
+This project was created by a middle school student as an initiative for their MYP Community Project, with the goal of making personalized reading accessible to all children. 
