@@ -586,5 +586,5 @@ if st.button("Get Recommendations", key="recommendations_button"): # Recommendat
         # Display the plot
         st.pyplot(plt)
 
-print(filtered_books[filtered_books["Title"].str.contains("Percy Jackson", case=False)])
+st.write(filtered_books[filtered_books["Title"].str.contains("Percy Jackson", case=False)])
 
