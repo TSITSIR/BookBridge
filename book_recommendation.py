@@ -584,4 +584,4 @@ if st.button("Get Recommendations", key="recommendations_button"): # Recommendat
         plt.xticks(rotation=72, ha='right', fontsize=12)
 
         # Display the plot
-        st.pyplot(plt)  `q12
+        st.pyplot(plt)
