@@ -389,7 +389,7 @@ setting = st.slider("Do you enjoy books set in realistic or magical settings?", 
 st.caption(get_setting_explanation(setting))
 
 # Optional Genre Question
-genre_options = ["No preference", "Fantasy", "Animal Fiction", "Mystery", "Adventure", "Science Fiction", "Historical Fiction", "Realistic Fiction", "Non-Fiction", "Sport"]
+genre_options = ["No preference", "Sport", "Fantasy", "Animal Fiction", "Mystery", "Adventure", "Science Fiction", "Historical Fiction", "Realistic Fiction", "Non-Fiction"]
 selected_genre = st.selectbox("Select a genre you're most interested in:", genre_options,
                               help="Please note that your genre preference will not change your entire set of recommendations, only influence it. Non-Fiction includess memoirs and biographies, as well as standard fact-based books.")
 
