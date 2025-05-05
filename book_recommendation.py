@@ -584,7 +584,4 @@ if st.button("Get Recommendations", key="recommendations_button"): # Recommendat
         plt.xticks(rotation=72, ha='right', fontsize=12)
 
         # Display the plot
-        st.pyplot(plt)
-
-st.write(filtered_books[filtered_books["Title"].str.contains("Percy Jackson", case=False)])
-
+        st.pyplot(plt)  `q12
