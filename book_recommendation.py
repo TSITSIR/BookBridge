@@ -231,7 +231,7 @@ books = pd.DataFrame({
          "Realistic Fiction", "Realistic Fiction", "Adventure", "Fantasy", "Mystery",
          "Animal Fiction", "Adventure", "Realistic Fiction", "Mystery", "Adventure",
          "Non-Fiction", "Science Fiction", "Fantasy", "Mystery", "Realistic Fiction",
-         "Sport-Realistic Fiction", "Sport", "Sport", "Sport"
+         "Sport-Realistic Fiction", "Sport", "Sport", "Sport", "Sport-Realistic Fiction"
     ]
 })
 
