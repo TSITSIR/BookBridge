@@ -10,7 +10,7 @@ from sklearn.preprocessing import MultiLabelBinarizer
 st.set_page_config(page_title="BookBridge",
                    page_icon="📚",
                    layout="wide",
-                   menu_items={"About": "This quiz was made by a middle schooler to help you select some books you could have an interest in! Hope you found/can find something you would like!"} 
+                   menu_items={"About": "This quiz was made by a middle schooler to help you select some books you could have an interest in! Hope you found/can find something you would like!\nNote: If you wish to remove buttons in the upper-right to minimize distractions on the website, add /?mode=kid to the URL."} 
                    )
 
 # Read query parameter 
