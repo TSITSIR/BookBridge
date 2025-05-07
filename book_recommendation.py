@@ -404,16 +404,19 @@ if not filtered_books.empty:
 
     book_vectors = filtered_books[["Drive", "Pace", "Tone", "Pictures", "Setting"]].values
 
-    # Softer attribute weights
-    weights = np.array([1.0, 0.9, 1.0, 0.8, 0.7])
+    # Feature weights: Drive, Pace, Tone, Pictures, Setting
+    weights = np.array([1.0, 0.9, 1.0, 0.8, 0.7])  # Slightly softer weights
 
-    # Weighted squared differences
+    # Compute squared differences and apply weights
     differences = (user_preferences - book_vectors) ** 2
     weighted_differences = differences * weights
+
+    # Calculate base Euclidean distance
     base_distance = np.sqrt(np.sum(weighted_differences, axis=1))
 
-    # Genre similarity adjustment
+    # ----------- Genre Similarity Adjustment -----------
     genre_penalty = np.zeros(len(filtered_books))
+
     if selected_genre.lower() != "no preference":
         selected_genre_lower = selected_genre.lower()
 
@@ -422,21 +425,21 @@ if not filtered_books.empty:
             if selected_genre_lower not in book_genres:
                 match_score = sum(1 for g in book_genres if g == selected_genre_lower)
                 penalty_factor = 1 - (match_score / len(book_genres))
-                genre_penalty[i] = penalty_factor * 3  # Softer genre penalty
+                genre_penalty[i] = penalty_factor * 3  # Softer max genre penalty
 
-    # Combine distance with genre
+    # Total distance includes genre penalty
     total_distance = base_distance + genre_penalty
 
-    # Calculate max possible distance for normalization (slightly increased range)
-    max_attr_diff = 4  # Forgiving assumption: attributes can differ more
+    # ----------- Adjusted Normalization for Forgiveness -----------
+    max_attr_diff = 5  # Assume broader range of possible differences
     max_attr_distance = np.sqrt(np.sum(weights * (max_attr_diff ** 2)))
-    max_total_distance = max_attr_distance + 3  # Softer genre penalty
+    max_total_distance = max_attr_distance + 3  # Include max genre penalty
 
-    # Convert to similarity score
+    # Convert to similarity percentage (more generous range)
     similarity_percentage = (1 - (total_distance / max_total_distance)) * 100
     similarity_percentage = np.clip(similarity_percentage, 0, 100)
 
-    # Apply similarity score and sort
+    # Assign and sort
     filtered_books.loc[:, "Similarity"] = similarity_percentage
     top_books = filtered_books.sort_values("Similarity", ascending=False).head(5)
 
