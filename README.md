@@ -7,7 +7,7 @@ This project makes finding the “next great book” easy, fast, and fun.
 
 ## How It Works
 
-BookBridge recommends the top 4 or 5 books (depending on preference-specific factors) from a curated list of ~100 titles using an intuitive questionnaire:
+BookBridge recommends the top 5 books from a curated list of ~100 titles using an questionnaire:
 
 - **Grade Level**: Choose the reader’s current reading range (note that the system favors recommending books slightly above the reading level instead of slightly below, as challenging readers is valuable)
 - **Sliders** for:
