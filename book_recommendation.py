@@ -431,7 +431,7 @@ if not filtered_books.empty:
     total_distance = base_distance + genre_penalty
 
     # ----------- Adjusted Normalization for Forgiveness -----------
-    max_attr_diff = 5  # Assume broader range of possible differences
+    max_attr_diff = 15  # Assume broader range of possible differences
     max_attr_distance = np.sqrt(np.sum(weights * (max_attr_diff ** 2)))
     max_total_distance = max_attr_distance + 3  # Include max genre penalty
 
