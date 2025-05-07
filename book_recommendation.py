@@ -404,8 +404,8 @@ if not filtered_books.empty:
 
     book_vectors = filtered_books[["Drive", "Pace", "Tone", "Pictures", "Setting"]].values
 
-    # Attribute weights
-    weights = np.array([1.2, 1.0, 1.2, 0.9, 0.8])
+    # Softer attribute weights
+    weights = np.array([1.0, 0.9, 1.0, 0.8, 0.7])
 
     # Weighted squared differences
     differences = (user_preferences - book_vectors) ** 2
@@ -422,18 +422,19 @@ if not filtered_books.empty:
             if selected_genre_lower not in book_genres:
                 match_score = sum(1 for g in book_genres if g == selected_genre_lower)
                 penalty_factor = 1 - (match_score / len(book_genres))
-                genre_penalty[i] = penalty_factor * 5  # 5 is a tuned max genre penalty
+                genre_penalty[i] = penalty_factor * 3  # Softer genre penalty
 
     # Combine distance with genre
     total_distance = base_distance + genre_penalty
 
-    # Calculate max possible distance for normalization
-    max_attr_diff = 3  # Max difference per attribute assumed to be 3
+    # Calculate max possible distance for normalization (slightly increased range)
+    max_attr_diff = 4  # Forgiving assumption: attributes can differ more
     max_attr_distance = np.sqrt(np.sum(weights * (max_attr_diff ** 2)))
-    max_total_distance = max_attr_distance + 5  # Include max genre penalty
+    max_total_distance = max_attr_distance + 3  # Softer genre penalty
 
     # Convert to similarity score
     similarity_percentage = (1 - (total_distance / max_total_distance)) * 100
+    similarity_percentage = np.clip(similarity_percentage, 0, 100)
 
     # Apply similarity score and sort
     filtered_books.loc[:, "Similarity"] = similarity_percentage
