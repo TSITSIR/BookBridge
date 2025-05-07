@@ -134,7 +134,9 @@ books = pd.DataFrame({
       "Little Shaq - Shaquille O'Neal",
       "Jake Maddox Sports (Series) - Jake Maddox",
       "Power Forward  - Hena Khan",
-      "Golden Arm - Carl Deuker"
+      "Golden Arm - Carl Deuker",
+      "Frank Einstein (Series) - Jon Scieszka",
+      "Alien in My Pocket (Series) - Nate Ball"
         ],
     "Drive": [2, 4, 6, 7, 2, 4, 3, 6, 6, 5,
               8, 6, 5, 5, 8, 5, 7, 9, 8, 10,
@@ -146,7 +148,7 @@ books = pd.DataFrame({
               3, 2, 2, 5, 4, 8, 8, 5, 3, 4,
               7, 5, 8, 5, 6, 3, 2, 6, 6, 3,
               4, 3, 7, 9, 4, 8, 3, 5, 3, 3,
-              8, 6, 5, 3, 2],
+              8, 6, 5, 3, 2, 4, 4],
     "Pace": [5, 7, 6, 7, 3, 9, 10, 8, 8, 2,
              6, 3, 7, 3, 8, 5, 7, 4, 6, 10,
              7, 8, 8, 4, 5, 8, 5, 6, 6, 10,
@@ -157,7 +159,7 @@ books = pd.DataFrame({
              9, 6, 8, 7, 5, 6, 9, 9, 3, 5,
              8, 6, 8, 3, 5, 4, 9, 8, 9, 6,
              7, 9, 6, 7, 6, 10, 7, 8, 7, 6,
-             7, 9, 8, 6, 5],
+             7, 9, 8, 6, 5, 7, 9],
     "Tone": [4, 5, 6, 3, 10, 5, 6, 5, 5, 4,
              5, 7, 5, 6, 5, 6, 5, 7, 3, 7,
              5, 2, 2, 5, 6, 7, 3, 1, 8, 9,
@@ -168,7 +170,7 @@ books = pd.DataFrame({
              9, 7, 10, 8, 4, 3, 9, 10, 9, 8,
              10, 3, 6, 3, 2, 2, 6, 4, 5, 2,
              2, 8, 5, 6, 3, 9, 3, 4, 7, 5,
-             6, 10, 9, 6, 6],
+             6, 10, 9, 6, 6, 8, 8],
     "Pictures": [7, 1, 6, 2, 9, 6, 6, 2, 10, 4,
                  7, 6, 2, 7, 7, 2, 3, 8, 9, 10,
                  10, 2, 10, 9, 6, 8, 4, 1, 8, 10,
@@ -179,7 +181,7 @@ books = pd.DataFrame({
                  10, 10, 10, 9, 7, 2, 10, 8, 9, 10,
                  6, 8, 5, 2, 1, 10, 10, 1, 10, 1,
                  1, 10, 2, 1, 1, 10, 7, 3, 3, 1,
-                 3, 8, 6, 1, 2],
+                 3, 8, 6, 1, 2, 7, 6],
     "Setting": [3, 9, 5, 10, 5, 4, 5, 9, 9, 5,
                 8, 6, 7, 4, 10, 5, 10, 1, 7, 1,
                 1, 2, 2, 4, 8, 3, 2, 1, 4, 9,
@@ -190,7 +192,7 @@ books = pd.DataFrame({
                 6, 7, 2, 4, 2, 5, 6, 7, 3, 5,
                 2, 3, 4, 5, 6, 2, 1, 10, 10, 1,
                 6, 4, 2, 1, 2, 2, 8, 9, 2, 1,
-                2, 2, 1, 2, 1],
+                2, 2, 1, 2, 1, 5, 6],
     "Reading level": [75, 87, 75, 94, 47, 60,
                       90, 83, 83, 90, 90, 94,
                       110, 60, 98, 89, 80, 83,
@@ -208,7 +210,7 @@ books = pd.DataFrame({
                       109, 110, 40, 98, 95, 100,
                       119, 83, 111, 109, 94, 60,
                       109, 128, 70, 97, 109, 40,
-                      60, 68, 110
+                      60, 68, 110, 68, 60
     ],
     "Genre": [
          "Animal Fiction", "Fantasy", "Magical Realism", "Fantasy", "Animal Fiction",
@@ -231,7 +233,8 @@ books = pd.DataFrame({
          "Realistic Fiction", "Realistic Fiction", "Adventure", "Fantasy", "Mystery",
          "Animal Fiction", "Adventure", "Realistic Fiction", "Mystery", "Adventure",
          "Non-Fiction", "Science Fiction", "Fantasy", "Mystery", "Realistic Fiction",
-         "Sport-Realistic Fiction", "Sport", "Sport", "Sport", "Sport-Realistic Fiction"
+         "Sport-Realistic Fiction", "Sport", "Sport", "Sport", "Sport-Realistic Fiction",
+         "Science Fiction-Adventure", "Science Fiction"
     ]
 })
 
