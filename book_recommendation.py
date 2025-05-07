@@ -397,15 +397,18 @@ genre_options = ["No preference", "Sport", "Fantasy", "Animal Fiction", "Mystery
 selected_genre = st.selectbox("Select a genre you're most interested in:", genre_options,
                               help="Please note that your genre preference will not change your entire set of recommendations, only influence it. Non-Fiction includess memoirs and biographies, as well as standard fact-based books.")
 
+# Weighted distance system with genre comparison
 if not filtered_books.empty:
-    # User preferences vector (Drive, Pace, Tone, Pictures, Setting)
+    # User preferences only include the 5 sliders: Drive, Pace, Tone, Pictures, Setting
     user_preferences = np.array([[drive, pace, tone, pictures, setting]])
+
+    # Repeat user prefs to match number of books
     user_preferences = np.tile(user_preferences, (len(filtered_books), 1))
 
     book_vectors = filtered_books[["Drive", "Pace", "Tone", "Pictures", "Setting"]].values
 
     # Feature weights: Drive, Pace, Tone, Pictures, Setting
-    weights = np.array([1.0, 0.9, 1.0, 0.8, 0.7])  # Slightly softer weights
+    weights = np.array([1.2, 1, 1.2, 0.9, 0.8])
 
     # Compute squared differences and apply weights
     differences = (user_preferences - book_vectors) ** 2
@@ -418,26 +421,20 @@ if not filtered_books.empty:
     genre_penalty = np.zeros(len(filtered_books))
 
     if selected_genre.lower() != "no preference":
+        # Normalize selected genre
         selected_genre_lower = selected_genre.lower()
 
         for i, genre in enumerate(filtered_books["Genre"]):
             book_genres = [g.strip().lower() for g in genre.split("-")]
             if selected_genre_lower not in book_genres:
-                match_score = sum(1 for g in book_genres if g == selected_genre_lower)
-                penalty_factor = 1 - (match_score / len(book_genres))
-                genre_penalty[i] = penalty_factor * 3  # Softer max genre penalty
+                genre_penalty[i] = 4  # Fixed penalty for genre mismatch
 
     # Total distance includes genre penalty
     total_distance = base_distance + genre_penalty
 
-    # ----------- Adjusted Normalization for Forgiveness -----------
-    max_attr_diff = 15  # Assume broader range of possible differences
-    max_attr_distance = np.sqrt(np.sum(weights * (max_attr_diff ** 2)))
-    max_total_distance = max_attr_distance + 3  # Include max genre penalty
-
-    # Convert to similarity percentage (more generous range)
-    similarity_percentage = (1 - (total_distance / max_total_distance)) * 100
-    similarity_percentage = np.clip(similarity_percentage, 0, 100)
+    # Convert to similarity percentage
+    max_distance = np.sqrt(461.7) + 4  # Adjusted max with possible genre penalty
+    similarity_percentage = (1 - (total_distance / max_distance)) * 100
 
     # Assign and sort
     filtered_books.loc[:, "Similarity"] = similarity_percentage
@@ -528,8 +525,16 @@ def categorize_feature(value, feature_type):
 
 if st.button("Get Recommendations", key="recommendations_button"): # Recommendation button
     with st.spinner("Recommendations loading..."):  # Show the spinner within the container
-      
-        top_books = filtered_books.nlargest(5, "Similarity") # For closest 5 books, by similarity
+
+        # If there's a genre filter and we have enough matching genre books, adjust the first recommendation
+        if selected_genre != "No preference" and len(genre_filtered_books) >= 3:
+            top_books = genre_filtered_books.nlargest(5, "Similarity") # For closest 5 books
+        elif 0 < len(genre_filtered_books) < 3:
+            top_books = filtered_books.nlargest(5, "Similarity") # For closest 4 books, if 0 < the amount of genre filtered books < 3
+            genre_book = genre_filtered_books.iloc[0, 1]  # Pick the first and second matching genre book
+            top_books.iloc[-1, -2] = genre_book  # Replace the last and second last books with the genre match
+        else:
+            top_books = filtered_books.nlargest(5, "Similarity") # For closest 5 books in case no preference of genre (or genre_filtered_books is empty)
 
         if filtered_books.empty:
             st.warning("No books available in your reading range. If possible, try altering your preferences.")
