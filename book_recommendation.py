@@ -408,7 +408,7 @@ if not filtered_books.empty:
     book_vectors = filtered_books[["Drive", "Pace", "Tone", "Pictures", "Setting"]].values
 
     # Feature weights: Drive, Pace, Tone, Pictures, Setting
-    weights = np.array([1.2, 1, 1.2, 0.9, 0.8])
+    weights = np.array([1.2, 1, 1.4, 0.9, 0.8])
 
     # Compute squared differences and apply weights
     differences = (user_preferences - book_vectors) ** 2
