@@ -525,16 +525,8 @@ def categorize_feature(value, feature_type):
 
 if st.button("Get Recommendations", key="recommendations_button"): # Recommendation button
     with st.spinner("Recommendations loading..."):  # Show the spinner within the container
-
-        # If there's a genre filter and we have enough matching genre books, adjust the first recommendation
-        if selected_genre != "No preference" and len(genre_filtered_books) >= 3:
-            top_books = genre_filtered_books.nlargest(5, "Similarity") # For closest 5 books
-        elif 0 < len(genre_filtered_books) < 3:
-            top_books = filtered_books.nlargest(5, "Similarity") # For closest 4 books, if 0 < the amount of genre filtered books < 3
-            genre_book = genre_filtered_books.iloc[0, 1]  # Pick the first and second matching genre book
-            top_books.iloc[-1, -2] = genre_book  # Replace the last and second last books with the genre match
-        else:
-            top_books = filtered_books.nlargest(5, "Similarity") # For closest 5 books in case no preference of genre (or genre_filtered_books is empty)
+      
+        top_books = filtered_books.nlargest(5, "Similarity") # For closest 5 books, by similarity
 
         if filtered_books.empty:
             st.warning("No books available in your reading range. If possible, try altering your preferences.")
