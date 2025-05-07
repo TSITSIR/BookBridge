@@ -397,46 +397,45 @@ genre_options = ["No preference", "Sport", "Fantasy", "Animal Fiction", "Mystery
 selected_genre = st.selectbox("Select a genre you're most interested in:", genre_options,
                               help="Please note that your genre preference will not change your entire set of recommendations, only influence it. Non-Fiction includess memoirs and biographies, as well as standard fact-based books.")
 
-# Weighted distance system with genre comparison
 if not filtered_books.empty:
-    # User preferences only include the 5 sliders: Drive, Pace, Tone, Pictures, Setting
+    # User preferences vector (Drive, Pace, Tone, Pictures, Setting)
     user_preferences = np.array([[drive, pace, tone, pictures, setting]])
-
-    # Repeat user prefs to match number of books
     user_preferences = np.tile(user_preferences, (len(filtered_books), 1))
 
     book_vectors = filtered_books[["Drive", "Pace", "Tone", "Pictures", "Setting"]].values
 
-    # Feature weights: Drive, Pace, Tone, Pictures, Setting
-    weights = np.array([1.2, 1, 1.2, 0.9, 0.8])
+    # Attribute weights
+    weights = np.array([1.2, 1.0, 1.2, 0.9, 0.8])
 
-    # Compute squared differences and apply weights
+    # Weighted squared differences
     differences = (user_preferences - book_vectors) ** 2
     weighted_differences = differences * weights
-
-    # Calculate base Euclidean distance
     base_distance = np.sqrt(np.sum(weighted_differences, axis=1))
 
-    # ----------- Genre Similarity Adjustment -----------
+    # Genre similarity adjustment
     genre_penalty = np.zeros(len(filtered_books))
-
     if selected_genre.lower() != "no preference":
-        # Normalize selected genre
         selected_genre_lower = selected_genre.lower()
 
         for i, genre in enumerate(filtered_books["Genre"]):
             book_genres = [g.strip().lower() for g in genre.split("-")]
             if selected_genre_lower not in book_genres:
-                genre_penalty[i] = 4  # Fixed penalty for genre mismatch
+                match_score = sum(1 for g in book_genres if g == selected_genre_lower)
+                penalty_factor = 1 - (match_score / len(book_genres))
+                genre_penalty[i] = penalty_factor * 5  # 5 is a tuned max genre penalty
 
-    # Total distance includes genre penalty
+    # Combine distance with genre
     total_distance = base_distance + genre_penalty
 
-    # Convert to similarity percentage
-    max_distance = np.sqrt(461.7) + 4  # Adjusted max with possible genre penalty
-    similarity_percentage = (1 - (total_distance / max_distance)) * 100
+    # Calculate max possible distance for normalization
+    max_attr_diff = 3  # Max difference per attribute assumed to be 3
+    max_attr_distance = np.sqrt(np.sum(weights * (max_attr_diff ** 2)))
+    max_total_distance = max_attr_distance + 5  # Include max genre penalty
 
-    # Assign and sort
+    # Convert to similarity score
+    similarity_percentage = (1 - (total_distance / max_total_distance)) * 100
+
+    # Apply similarity score and sort
     filtered_books.loc[:, "Similarity"] = similarity_percentage
     top_books = filtered_books.sort_values("Similarity", ascending=False).head(5)
 
