@@ -63,7 +63,7 @@ books = pd.DataFrame({
       "My Father's Dragon - Ruth Gannett",
       "Time Warp Trio (Series) - Jon Scieszka",
       "The Magic School Bus (Series) - Joanna Cole",
-      "Jasmine Toguchi, Mochi Queen - Debbi Michiko Florence",
+      "Jasmine Toguchi (Series) - Debbi Michiko Florence",
       "Desmond Cole Ghost Patrol (Series) - Andres Miedoso",
       "Zoey and Sassafras (Series) - Asia Citro",
       "The Hobbit - J.R.R. Tolkien",
