@@ -84,7 +84,7 @@ books = pd.DataFrame({
       "National Geographic Kids (Series) - National Geographic Society",
       "The Giving Tree - Shel Silverstein",
       "Abe Lincoln: The Boy who Loved Books - Kay Winters",
-      "Hidden Figures (Series) - Margot Lee Shetterly",
+      "Hidden Figures - Margot Lee Shetterly",
       "The Crossover - Kwame Alexander",
       "The Crossover (Graphic Novel) - Kwame Alexander",
       "The Breadwinner (Series) - Deborah Ellis",
