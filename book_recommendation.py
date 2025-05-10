@@ -92,7 +92,7 @@ books = pd.DataFrame({
       "The Kite Runner - Khaled Hosseini",
       "I am Malala - Malala Yousafzai",
       "The Fault in Our Stars - John Green",
-      "Children of Blood and Bone - Tomi Adeyemi",
+      "Legacy of Orisha - Tomi Adeyemi",
       "The Storm Runner - Jennifer Cervantes",
       "Amina's Voice - Hena Khan",
       "The Giver Quartet (Series) - Lois Lowry",
@@ -224,17 +224,17 @@ books = pd.DataFrame({
          "Adventure", "Science Fiction", "Fantasy", "Mystery", "Historical Fiction",
          "Mystery", "Science Fiction", "Mystery", "Fantasy", "Adventure",
          "Historical Fiction", "Non-Fiction", "Fable", "Non-Fiction", "Non-Fiction",
-         "Sport-Realistic Fiction", "Historical Fiction", "Historical Fiction", "Realistic Fiction",
-         "Historical Fiction", "Non-Fiction", "Realistic Fiction", "Fantasy", "Fantasy",
-         "Realistic Fiction", "Science Fiction", "Adventure", "Non-Fiction", "Fantasy",
-         "Animal Fiction", "Animal Fiction", "Science Fiction", "Fiction", "Realistic Fiction",
-         "Magical Realism", "Animal Fiction", "Animal Fiction", "Animal Fiction", "Magical Realism",
-         "N/A", "Fantasy", "Animal Fiction", "Magical Realism", "Fiction",
-         "Realistic Fiction", "Realistic Fiction", "Adventure", "Fantasy", "Mystery",
-         "Animal Fiction", "Adventure", "Realistic Fiction", "Mystery", "Adventure",
-         "Non-Fiction", "Science Fiction", "Fantasy", "Mystery", "Realistic Fiction",
-         "Sport-Realistic Fiction", "Sport", "Sport", "Sport", "Sport-Realistic Fiction",
-         "Science Fiction-Adventure", "Science Fiction", "Fantasy"
+         "Sport-Realistic Fiction", "Historical Fiction", "Historical Fiction", "Realistic Fiction", "Historical Fiction",
+         "Non-Fiction", "Realistic Fiction", "Fantasy", "Fantasy", "Realistic Fiction",
+         "Science Fiction", "Adventure", "Non-Fiction", "Fantasy", "Animal Fiction",
+         "Animal Fiction", "Science Fiction", "Fiction", "Realistic Fiction", "Magical Realism",
+         "Animal Fiction", "Animal Fiction", "Animal Fiction", "Magical Realism", "N/A",
+         "Fantasy", "Animal Fiction", "Magical Realism", "Fiction", "Realistic Fiction",
+         "Realistic Fiction", "Adventure", "Fantasy", "Mystery", "Animal Fiction",
+         "Adventure", "Realistic Fiction", "Mystery", "Adventure", "Non-Fiction",
+         "Science Fiction", "Fantasy", "Mystery", "Realistic Fiction", "Sport-Realistic Fiction",
+         "Sport", "Sport", "Sport", "Sport-Realistic Fiction", "Science Fiction-Adventure",
+         "Science Fiction", "Fantasy"
     ]
 })
 
