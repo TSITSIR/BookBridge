@@ -128,7 +128,7 @@ books = pd.DataFrame({
       "Ender's Game - Orson Scott Card",
       "Strange the Dreamer - Laini Taylor",
       "Out of My Mind (Series) - Sharon M. Draper",
-      "Ghost - Jason Reynolds",
+      "Ghost (Series) - Jason Reynolds",
       "Little Shaq - Shaquille O'Neal",
       "Jake Maddox Sports (Series) - Jake Maddox",
       "Power Forward  - Hena Khan",
