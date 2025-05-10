@@ -106,7 +106,7 @@ books = pd.DataFrame({
       "The Hate U Give (Series) - Angie Thomas",
       "Like Water for Chocolate - Laura Esquivel",
       "Frog and Toad (Series) - Arnold Lobel",
-      "Clifford, the Big Red Dog - Norman Bridwell",
+      "Clifford, the Big Red Dog (Series) - Norman Bridwell",
       "Biscuit - Alyssa Satin Capucilli",
       "The Night Gardener - Terry and Eric Fan",
       "Goodnight Moon - Margaret Wise Brown",
