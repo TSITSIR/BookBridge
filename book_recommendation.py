@@ -94,7 +94,7 @@ books = pd.DataFrame({
       "The Fault in Our Stars - John Green",
       "Legacy of Orisha - Tomi Adeyemi",
       "The Storm Runner - Jennifer Cervantes",
-      "Amina's Voice - Hena Khan",
+      "Amina's Voice (Series) - Hena Khan",
       "The Giver Quartet (Series) - Lois Lowry",
       "The Hunger Games (Series) - Suzanne Collins",
       "Brown Girl Dreaming - Jacqueline Woodson",
