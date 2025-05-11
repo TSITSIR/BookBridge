@@ -667,7 +667,6 @@ if st.button("Get Recommendations", key="recommendations_button"): # Recommendat
                 st.write(f"**Tone**: {tone_category}")
                 st.write(f"**Pictures**: {pictures_category}")
                 st.write(f"**Setting**: {setting_category}")
-                st.write(f"**Somers Library link**: {url_category}")
                 st.markdown(f"[Somers Library link]({row['URL']})")
 
         # Add the short title to the DataFrame
