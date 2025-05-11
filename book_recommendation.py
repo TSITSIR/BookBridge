@@ -659,6 +659,7 @@ if st.button("Get Recommendations", key="recommendations_button"): # Recommendat
             tone_category = categorize_feature(row["Tone"], "Tone")
             pictures_category = categorize_feature(row["Pictures"], "Pictures")
             setting_category = categorize_feature(row["Setting"], "Setting")
+            url_category = categorize_feature(row["URL"], "URL")
 
             # Display book title and create an expander for detailed information
             with st.expander(f"**{row['Title']}**", expanded=False):
@@ -667,7 +668,7 @@ if st.button("Get Recommendations", key="recommendations_button"): # Recommendat
                 st.write(f"**Tone**: {tone_category}")
                 st.write(f"**Pictures**: {pictures_category}")
                 st.write(f"**Setting**: {setting_category}")
-                st.markdown(f'<a href="{books("URL")}" target="_blank">View book on Somers Library website</a>', unsafe_allow_html=True)
+                st.write(f"**Somers Library link**: {url_category}")
 
         # Add the short title to the DataFrame
         top_books.loc[:, "Short Title"] = top_books["Title"].apply(lambda x: textwrap.shorten(x, width=30, placeholder="..."))
