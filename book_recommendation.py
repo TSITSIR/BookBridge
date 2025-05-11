@@ -257,7 +257,7 @@ books = pd.DataFrame({
          "https://somers.aspendiscovery.org/GroupedWork/1115022e-6e9f-c7a0-d03b-a68416f303aa-eng/Home", 
          "https://somers.aspendiscovery.org/Search/Results?searchIndex=Series&lookfor=%22Big%20Nate%22&sort=year+asc%2Ctitle+asc", 
          "https://somers.aspendiscovery.org/Search/Results?searchIndex=Series&lookfor=%22Click%22&sort=year+asc%2Ctitle+asc", 
-         "https://somers.aspendiscovery.org/Search/Results?searchIndex=Series&lookfor=%22I%20Survived%22&sort=year+asc%2Ctitle+asc", 
+         "https://somers.aspendiscovery.org/Search/Results?lookfor=%22I+Survived%22&searchIndex=Series&sort=relevance&view=list&searchSource=local", 
          "https://somers.aspendiscovery.org/Search/Results?searchIndex=Series&lookfor=%22I%20survived%20%28Graphic%20novel%20series%29%22&sort=year+asc%2Ctitle+asc", 
          "https://somers.aspendiscovery.org/Search/Results?searchIndex=Series&lookfor=%22Wild%20robot%20%28Series%29%22&sort=year+asc%2Ctitle+asc", 
          "https://somers.aspendiscovery.org/GroupedWork/aaf05827-829e-3a1a-39da-b35b93044265-eng/Home", 
